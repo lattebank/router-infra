@@ -1,0 +1,16 @@
+[Unit]
+Description=Router Infra configuration
+After=origin-node.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/configure.sh
+ExecStart=/usr/bin/config_tun0.sh
+Environment=BOOTUP=serial
+Environment=CONSOLETYPE=serial
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
