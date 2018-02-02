@@ -18,6 +18,8 @@ OpenShift Router Infra Configuration
 
 %install
 rm -rf %{buildroot}
+install -m 755 -d %{buildroot}/usr/bin/
+install -m 755 -d %{buildroot}/usr/lib/systemd/system/
 install -m 755 configure.sh %{buildroot}/usr/bin/
 install -m 755 config_tun0.sh %{buildroot}/usr/bin/
 install -m 644 router-infra.service %{buildroot}/usr/lib/systemd/system/
